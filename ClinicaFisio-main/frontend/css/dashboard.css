@@ -1,0 +1,629 @@
+.dashboard-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 24px;
+}
+ 
+.dashboard-header h1 {
+    margin: 0;
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+ 
+.dashboard-header p {
+    margin: 4px 0 0;
+    color: var(--text-secondary);
+}
+ 
+.dashboard-date {
+    margin-bottom: 4px;
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+ 
+.dashboard-date::first-letter {
+    text-transform: uppercase;
+}
+ 
+.page-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+ 
+.page-toolbar p {
+    margin: 0;
+    color: var(--text-secondary);
+}
+ 
+/* ---------- Faixa de resumo (substitui os 4 cartões soltos) ---------- */
+.summary-strip {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 1px;
+    margin-bottom: 24px;
+    overflow: hidden;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+ 
+.summary-item {
+    padding: 20px 24px;
+    background: var(--surface);
+}
+ 
+.summary-label {
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+ 
+.summary-value {
+    margin: 4px 0 2px;
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    font-variant-numeric: tabular-nums;
+}
+ 
+.summary-hint {
+    font-size: 13px;
+    color: var(--text-muted);
+}
+ 
+.summary-item.is-warning .summary-value {
+    color: #b45309;
+}
+ 
+/* ---------- Organização em colunas ---------- */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+    gap: 20px;
+    align-items: start;
+}
+ 
+.report-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    margin-bottom: 20px;
+}
+ 
+.dashboard-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+ 
+/* ---------- Painéis ---------- */
+.panel-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+ 
+.panel-head h3 {
+    margin: 0;
+    font-size: 1.05rem;
+    font-weight: 650;
+}
+ 
+.panel-head p {
+    margin: 2px 0 0;
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+ 
+.panel-figure {
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+}
+ 
+.panel-note {
+    margin: 10px 0 0;
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+ 
+.empty-inline {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 4px 0;
+    color: var(--text-secondary);
+}
+ 
+.empty-inline i {
+    font-size: 26px;
+    color: #8fbdb6;
+}
+ 
+.empty-inline strong {
+    display: block;
+    font-size: 14px;
+    color: var(--text-primary);
+}
+ 
+.empty-inline span {
+    font-size: 13px;
+}
+ 
+/* ---------- Lista de atendimentos ---------- */
+.dashboard-today-list {
+    display: flex;
+    flex-direction: column;
+}
+ 
+.dashboard-appointment-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+}
+ 
+.dashboard-appointment-item:first-child {
+    padding-top: 0;
+}
+ 
+.dashboard-appointment-item:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+ 
+.appointment-time {
+    min-width: 56px;
+}
+ 
+.appointment-time strong {
+    display: block;
+    font-size: 15px;
+    font-variant-numeric: tabular-nums;
+}
+ 
+.appointment-time span {
+    display: block;
+    font-size: 12px;
+    color: var(--text-muted);
+}
+ 
+.appointment-patient {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+ 
+.appointment-info strong {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+}
+ 
+.appointment-info span {
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+ 
+.patient-avatar {
+    width: 38px;
+    height: 38px;
+    flex: none;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--primary-light);
+    color: var(--primary-dark);
+    font-size: 13px;
+    font-weight: 700;
+}
+ 
+/* ---------- "Precisa de atenção" ---------- */
+.attention-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+ 
+.attention-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 12px;
+    text-align: left;
+    color: inherit;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    transition: background var(--transition), border-color var(--transition);
+}
+ 
+.attention-item:hover {
+    background: var(--surface-soft);
+    border-color: var(--primary);
+}
+ 
+.attention-item:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+ 
+.attention-icon {
+    width: 36px;
+    height: 36px;
+    flex: none;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+    background: #fef3c7;
+    color: #b45309;
+}
+ 
+.attention-text {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+ 
+.attention-text strong {
+    font-size: 14px;
+    font-weight: 600;
+}
+ 
+.attention-text span {
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+ 
+.attention-arrow {
+    color: var(--text-muted);
+}
+ 
+/* ---------- Barras e legendas (Relatórios) ---------- */
+.stack-bar {
+    display: flex;
+    gap: 2px;
+    height: 10px;
+    margin-bottom: 8px;
+    overflow: hidden;
+    background: var(--border);
+    border-radius: 999px;
+}
+ 
+.stack-bar span {
+    height: 100%;
+}
+ 
+.status-dot {
+    width: 9px;
+    height: 9px;
+    flex: none;
+    display: inline-block;
+    border-radius: 50%;
+}
+ 
+.status-confirmed {
+    background: #16a34a;
+}
+ 
+.status-pending {
+    background: #f59e0b;
+}
+ 
+.status-cancelled {
+    background: #dc2626;
+}
+ 
+.status-dot.is-blank {
+    background: transparent;
+}
+ 
+.legend-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+}
+ 
+.legend-row:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+}
+ 
+.legend-row.is-total {
+    font-weight: 700;
+}
+ 
+.legend-label {
+    flex: 1;
+}
+ 
+.legend-value {
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+}
+ 
+.legend-percent {
+    width: 48px;
+    text-align: right;
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+ 
+.pending-patients {
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+}
+ 
+.pending-patients-title {
+    margin-bottom: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+ 
+.pending-patients-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+ 
+.person-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 12px 4px 4px;
+    font-size: 13px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+}
+ 
+.person-chip .patient-avatar {
+    width: 26px;
+    height: 26px;
+    font-size: 11px;
+}
+ 
+/* ---------- Pagamentos ---------- */
+.table-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+ 
+.filter-tabs {
+    display: inline-flex;
+    gap: 4px;
+    padding: 4px;
+    background: var(--surface-soft);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+ 
+.filter-tab {
+    padding: 6px 12px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    background: transparent;
+    border: 0;
+    border-radius: 7px;
+}
+ 
+.filter-tab span {
+    margin-left: 6px;
+    color: var(--text-muted);
+}
+ 
+.filter-tab.active {
+    color: var(--primary-dark);
+    background: var(--surface);
+    box-shadow: var(--shadow-sm);
+}
+ 
+.filter-tab:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+ 
+.table-clean thead th {
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: 0;
+    text-transform: none;
+    white-space: nowrap;
+}
+ 
+.table-clean td,
+.table-clean th {
+    white-space: nowrap;
+}
+ 
+.table-clean td {
+    font-variant-numeric: tabular-nums;
+}
+ 
+.table-clean td.cell-desc {
+    min-width: 180px;
+    max-width: 280px;
+    white-space: normal;
+}
+ 
+.table-clean td.amount {
+    font-weight: 600;
+    text-align: right;
+}
+ 
+.table-clean .btn {
+    white-space: nowrap;
+}
+ 
+.cell-person {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+ 
+.cell-person .patient-avatar {
+    width: 32px;
+    height: 32px;
+    font-size: 12px;
+}
+ 
+/* ---------- Cartões simples (usados na área do paciente) ---------- */
+.stat-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    height: 100%;
+    padding: 18px 20px;
+}
+ 
+.stat-icon {
+    width: 44px;
+    height: 44px;
+    flex: none;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    background: var(--primary-light);
+    color: var(--primary-dark);
+    font-size: 20px;
+}
+ 
+.stat-value {
+    font-size: 1.35rem;
+    font-weight: 700;
+    line-height: 1.2;
+    font-variant-numeric: tabular-nums;
+}
+ 
+.stat-label {
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+ 
+.section-title {
+    margin: 28px 0 12px;
+    font-size: 1rem;
+    font-weight: 650;
+}
+ 
+/* ---------- Modo escuro ---------- */
+.dark-mode .summary-item.is-warning .summary-value {
+    color: #fbbf24;
+}
+ 
+.dark-mode .patient-avatar,
+.dark-mode .stat-icon {
+    background: var(--soft);
+    color: #5eead4;
+}
+ 
+.dark-mode .attention-icon {
+    background: #3a2e12;
+    color: #fbbf24;
+}
+ 
+.dark-mode .filter-tab.active {
+    color: #5eead4;
+}
+ 
+.dark-mode .btn-outline-primary {
+    color: #5eead4;
+    border-color: #2c6b64;
+    background: transparent;
+}
+ 
+.dark-mode .btn-outline-primary:hover {
+    color: #fff;
+    background: var(--primary);
+    border-color: var(--primary);
+}
+ 
+/* ---------- Telas menores ---------- */
+@media (max-width: 991px) {
+    .dashboard-grid,
+    .report-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+ 
+@media (max-width: 768px) {
+    .dashboard-header,
+    .page-toolbar {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+ 
+    .dashboard-header .btn,
+    .page-toolbar .btn {
+        width: 100%;
+    }
+}
+ 
+@media (max-width: 576px) {
+    .dashboard-header h1 {
+        font-size: 1.45rem;
+    }
+ 
+    .summary-item {
+        padding: 16px 18px;
+    }
+ 
+    .dashboard-appointment-item {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}
+.reminder-today {
+    background: rgba(20, 184, 166, 0.1);
+    border: 1px solid rgba(20, 184, 166, 0.45);
+    border-left: 5px solid #14b8a6;
+    border-radius: 16px;
+    padding: 16px 20px;
+}
+
+.reminder-today-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.reminder-today-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 10px 0;
+    border-top: 1px solid rgba(20, 184, 166, 0.25);
+}
+
+.reminder-today-time {
+    font-weight: 700;
+    font-size: 1.1rem;
+    min-width: 56px;
+}
+
+.reminder-today-type {
+    flex: 1;
+}
