@@ -160,6 +160,6 @@ Estudante de Sistemas de Informação
 
 <div align="center">
 
-Feito com 💙 para a clínica Joelma Negreiros Fisioterapia
+Clínica Joelma Negreiros Fisioterapia ⚕️
 
 </div>
